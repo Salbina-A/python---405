@@ -1,7 +1,10 @@
 def implication3(a, b, c):
-	return bool(a or (b and c))
 
-print(implication3(0, 0, 0))
+	d = bool( not (b) or c)
+	f = bool(not(a) or d)
+	return f
+
+print(implication3(1, 0, 0))
 
 
 
