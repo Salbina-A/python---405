@@ -1,7 +1,7 @@
 def check_fact(n):
     fact = 1
     i = 1
-    while fact<n:
+    while fact < n:
         i += 1
         fact *= i
     print(fact)
