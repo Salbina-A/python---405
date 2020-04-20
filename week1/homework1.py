@@ -12,6 +12,23 @@ def xor3(a, b, c):
 print(xor3(0, 0, 0))
 
 #3rd task
+def binary_sum(inp_str):
+	new_string = ""
+	for char in inp_str:
+		n = ord(char)
+		if 96 <= n <= 122:
+			
+			n = n = n+(110-n)*2-1
+			
+		
+		if 65 <= n <= 90:
+			n = n = n+(78-n)*2-1
+		char = chr(n)
+		new_string += char
+	
+
+	return (new_string)
+print(binary_sum('Hello World!'))
 
 #4th task
 
