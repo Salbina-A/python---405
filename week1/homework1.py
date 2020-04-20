@@ -17,8 +17,7 @@ def binary_sum(inp_str):
 	for char in inp_str:
 		n = ord(char)
 		if 96 <= n <= 122:
-			
-			n = n = n+(110-n)*2-1
+			n = n+(110-n)*2-1
 			
 		
 		if 65 <= n <= 90:
