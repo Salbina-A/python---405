@@ -41,9 +41,9 @@ print(binary_sum("1", "10" ))
 
 #6th task
 def only_names(inp):
-	check_names = filter(lambda x: x!= "", inp)
-	filtered_names = list(check_names)
-	return filtered_names
+	return(list(filter(lambda x: x!= "", inp)))
+
+	
 print(only_names(["Name0", "", "Name1", "", "Name2", "" ]))
 
 #7th task
