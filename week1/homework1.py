@@ -40,22 +40,24 @@ print(binary_sum("1", "10" ))
 
 
 #6th task
-def only_names(inp):
-	return(list(filter(lambda x: x!= "", inp)))
+inp_list = ["Name1","" , "", "", "Name2", ""]
+
+only_names = lambda i: [i for i in inp_list if i != ""]
+print(only_names(inp_list))
 
 	
 print(only_names(["Name0", "", "Name1", "", "Name2", "" ]))
 
 #7th task
-def discriminant(a, b, c):
-	cal = lambda d: ((b*b - 4*a*c))
-	return cal
-
-disc = discriminant(4, 8, 0)
-print(disc(1))
-
+discriminant  = lambda a, b, c: ((b*b - 4*a*c))
+print(discriminant (1, 2, 1))
 
 #8th task
-def full_name(list1, list2):
-	return list(map(lambda i: " ".join(i), zip(list1, list2)))
-print(full_name(["Nairi", "Vlad"], ["Hakobyan", "Poghosyan"]))
+
+list1 = ["Name0", "Name1"]
+list2 = ["L_Name0", "L_Name1"]
+
+full_name = (lambda i: [" ".join(map(str, i)) for i in zip(list1, list2)])
+
+print(full_name(0))
+
