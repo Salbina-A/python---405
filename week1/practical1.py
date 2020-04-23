@@ -18,6 +18,17 @@ def quick_or(bool_list):
 	return (any(bool_list))
 print(quick_or(([False, False, False, False, False, False])))
 
+
+def recursive_or(bool_list):
+	for i in bool_list:
+		if len(bool_list) ==1:
+			return i
+	return (bool_list[i] or bool_list[i-1])
+print(recursive_or([False, True]))
+
+
+
+
 #5th task
 def last_digit(N):
 	summ = 0
