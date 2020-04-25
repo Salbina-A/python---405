@@ -5,17 +5,16 @@
 def all_sums(inp_num):	
 	first_ind = 0
 	last_ind = 0
-	a = [item for item in range(1, inp_num)]
 
+	a = [item for item in range(1, inp_num)]
 	for i in range(int(len(a)/2)):
 		b = (a[first_ind], a[last_ind - 1])
-		print(b)
+		print(b, end = " ")
 		first_ind += 1
 		last_ind -= 1
 		
 	
-(all_sums(6))
-
+(all_sums(7))
 
 
 #3rd task
