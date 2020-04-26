@@ -18,6 +18,20 @@ def all_sums(inp_num):
 
 
 #3rd task
+from collections import defaultdict
+
+def duplicate_characters(inp_str):
+	d = defaultdict(int)
+	for k in inp_str.replace(" ", ""):
+		d[k] += 1
+	set_ret = set()
+	for char in sorted(d, key = d.get):
+		if d[char] > 1:
+			set_ret.add(char)
+	return(set_ret)
+
+print(duplicate_characters('Here we have some duplicates'))
+
 
 
 
