@@ -1,4 +1,27 @@
 #1st task
+def bisect_position(int_list, add_num):
+	if add_num > max(int_list):
+			print(len(int_list))
+	else:
+
+
+		int_list.append(add_num)
+		for i in int_list:
+			
+			for i in range(len(int_list)-1):				
+				
+				if int_list[i] > int_list[i+1]:	
+									
+					int_list[i] = int_list[i] + int_list[i+1]
+					int_list[i+1] = int_list[i] - int_list[i+1]
+					int_list[i] = int_list[i] - int_list[i+1]
+										
+					print(i)
+		
+
+bisect_position([1, 2, 5, 1, 7], 8)
+#P.S. works partly :3
+
 
 
 #2nd task
