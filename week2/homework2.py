@@ -1,26 +1,25 @@
 #1st task
 def bisect_position(int_list, add_num):
 	if add_num > max(int_list):
-			print(len(int_list))
+			return(len(int_list))
 	else:
 
 
 		int_list.append(add_num)
 		for i in int_list:
-			
-			for i in range(len(int_list)-1):				
+			for i in range(len(int_list)-1):
 				
 				if int_list[i] > int_list[i+1]:	
 									
 					int_list[i] = int_list[i] + int_list[i+1]
 					int_list[i+1] = int_list[i] - int_list[i+1]
 					int_list[i] = int_list[i] - int_list[i+1]
-										
-					print(i)
-		
+					
+					return(i)
+			
 
-bisect_position([1, 2, 5, 1, 7], 8)
-#P.S. works partly :3
+print(bisect_position([1, 2, 5, 1, 7], 8))
+#P.S. works partly
 
 
 
@@ -61,7 +60,7 @@ print(duplicate_characters('Here we have some duplicates'))
 #4th task
 def compare_lists(int_list1, int_list2):
 	if len(int_list1) != len(int_list2):
-		print(False)
+		return False
 	else:
 
 		for i in int_list1:
@@ -79,12 +78,11 @@ def compare_lists(int_list1, int_list2):
 						int_list2[i] = int_list2[i] - int_list2[i+1]
 
 		if int_list1 == int_list2:
-			print (True)
+			return True
 		else:
-			print(False)
+			return False
 
-compare_lists([6,1,5,4], [4,1,5,6]) 
-
+print(compare_lists([6,1,1,4], [4,1,1,6]))
 
 
 #5th task
