@@ -89,23 +89,25 @@ print(compare_lists([6,1,1,4], [4,1,1,6]))
 
 
 #6th task
-def sort_list(int_list, order):
+def sort_list(int_list, order = "ascending"):
 
-	for i in int_list:
-		for i in range(len(int_list)-1):
-			if int_list[i] < int_list[i+1] and order == "descending":
-				int_list[i] = int_list[i] + int_list[i+1]
-				int_list[i+1] = int_list[i] - int_list[i+1]
-				int_list[i] = int_list[i] - int_list[i+1]
-
-			if int_list[i] > int_list[i+1] or  order == "ascending":
-				int_list[i] = int_list[i] + int_list[i+1]
-				int_list[i+1] = int_list[i] - int_list[i+1]
-				int_list[i] = int_list[i] - int_list[i+1]
-	print(int_list)
+	if order == "descending":
+		for i in int_list:
+			for i in range(len(int_list)-1):
+				if int_list[i] < int_list[i+1]:
+					int_list[i] = int_list[i] + int_list[i+1]
+					int_list[i+1] = int_list[i] - int_list[i+1]
+					int_list[i] = int_list[i] - int_list[i+1]
 
 
-	
+	if order == "ascending":
+		for i in int_list:
+			for i in range(len(int_list)-1):
+				if int_list[i] > int_list[i+1]:
+					int_list[i] = int_list[i] + int_list[i+1]
+					int_list[i+1] = int_list[i] - int_list[i+1]
+					int_list[i] = int_list[i] - int_list[i+1]
 
-sort_list([1, 5, 7, 9, 1, 3, 0, -1], "descending")
+	return int_list
 
+print(sort_list([1, 5, 7, 9, 1, 3, 0, -1], ))
