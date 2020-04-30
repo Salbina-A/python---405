@@ -1,25 +1,23 @@
-#1st task
 def bisect_position(int_list, add_num):
-	if add_num > max(int_list):
-			return(len(int_list))
-	else:
 
+	if add_num >= max(int_list):
+			return(int_list.index(max(int_list)) +1)
 
-		int_list.append(add_num)
-		for i in int_list:
-			for i in range(len(int_list)-1):
+	if add_num < min(int_list):
+			return(int_list.index(min(int_list)))
+
+	if min(int_list) <= add_num < max(int_list):
+		ind_list = []
+		for i in range(len(int_list)):
+			if add_num >= int_list[i]:
+				ind_list.append(i)
+			ind_ret = ind_list[-1] + 1
+		
+		return ind_ret
 				
-				if int_list[i] > int_list[i+1]:	
-									
-					int_list[i] = int_list[i] + int_list[i+1]
-					int_list[i+1] = int_list[i] - int_list[i+1]
-					int_list[i] = int_list[i] - int_list[i+1]
-					
-					return(i)
-			
 
-print(bisect_position([1, 2, 5, 1, 7], 8))
-#P.S. works partly
+
+print(bisect_position([1, 4, 5, 7], 8))
 
 
 
