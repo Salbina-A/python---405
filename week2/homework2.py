@@ -82,6 +82,26 @@ print(compare_lists([6,1,1,4], [4,1,1,6]))
 
 
 #5th task
+def heapq(int_list, int_num):
+
+
+	if int_num >= int_list[-1]:
+		int_list.append(int_num)
+		return int_list
+
+	if int_num < int_list[0]:
+		return([int_num] + int_list)
+
+
+	if int_list[0] <= int_num < int_list[-1]:
+		ind_list = []
+		for i in range(len(int_list)-1):
+			if int_num >= int_list[i] and int_num <= int_list[i+1] :
+				
+				return (int_list[:i+2:] + [int_num] + int_list[i+2::])
+		
+
+print(heapq([1,2,3,4],5))
 
 
 #6th task
