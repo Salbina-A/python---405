@@ -15,6 +15,20 @@ import pandas as pd
 df = pd.read_csv("netflix_titles.csv")
 print(df[(df["release_year"]  > 2015) & (df["cast"].str.contains("Kevin Spacey") | df["cast"].str.contains("Leonardo DiCaprio"))])
 
+#3rd task
+import pandas as pd
+
+df = pd.read_csv("netflix_titles.csv")
+
+df_by_director = (df.groupby("director").size())
+ser_to_df = df_by_director.to_frame() 
+print(ser_to_df)
+
+final = df.merge(ser_to_df, on = "director")
+print(final)
+
+
+
 #5th task
 import pandas as pd
 
