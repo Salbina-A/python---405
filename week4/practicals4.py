@@ -1,3 +1,4 @@
+#1st task
 import pandas as pd
 
 Person = {"Name": ["Anahit", "Artur", "Hayk", "Jora", "Liana", "Nairi", "Ruzanna", "Salbina", "Sona", "Tatev", "Tigran", "Vlad"],
@@ -8,7 +9,7 @@ Person = {"Name": ["Anahit", "Artur", "Hayk", "Jora", "Liana", "Nairi", "Ruzanna
 df = pd.DataFrame(Person, columns = ["Name", "Surname", "Sex", "Status"])
 print(df)
 
-
+#2nd task
 import pandas as pd
 
 df = pd.read_csv("netflix_titles.csv")
