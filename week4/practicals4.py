@@ -7,3 +7,10 @@ Person = {"Name": ["Anahit", "Artur", "Hayk", "Jora", "Liana", "Nairi", "Ruzanna
 				}
 df = pd.DataFrame(Person, columns = ["Name", "Surname", "Sex", "Status"])
 print(df)
+
+
+import pandas as pd
+
+df = pd.read_csv("netflix_titles.csv")
+df [(df["release_year"] > 2015)]
+print(df)
