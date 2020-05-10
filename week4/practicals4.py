@@ -13,5 +13,4 @@ print(df)
 import pandas as pd
 
 df = pd.read_csv("netflix_titles.csv")
-df [(df["release_year"] > 2015)]
-print(df)
+print(df[(df["release_year"]  > 2015)])
