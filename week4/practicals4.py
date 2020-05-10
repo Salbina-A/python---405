@@ -13,4 +13,13 @@ print(df)
 import pandas as pd
 
 df = pd.read_csv("netflix_titles.csv")
-print(df[(df["release_year"]  > 2015)])
+print(df[(df["release_year"]  > 2015) & (df["cast"].str.contains("Kevin Spacey") | df["cast"].str.contains("Leonardo DiCaprio"))])
+
+#5th task
+import pandas as pd
+
+df = pd.read_csv("netflix_titles.csv")
+
+df1 = df.sort_values(by = ["duration", "date_added"])
+
+print(df1[~df1["cast"].isnull() & (df1["cast"].str.contains("Antonio Banderas"))])
