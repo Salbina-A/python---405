@@ -37,3 +37,23 @@ df = pd.read_csv("netflix_titles.csv")
 df1 = df.sort_values(by = ["duration", "date_added"])
 
 print(df1[~df1["cast"].isnull() & (df1["cast"].str.contains("Antonio Banderas"))])
+
+
+#7th task
+import pandas as pd
+import datetime 
+
+df = pd.read_csv("netflix_titles.csv")
+
+df["date_added"] = pd.to_datetime(df["date_added"])
+
+date_from = min(df["date_added"])
+date_to = max(df["date_added"])
+
+
+
+sorted_df = df[(df["date_added"] >= date_from) & (df["date_added"] <= date_to)]
+
+
+for i in range(len(sorted_df) - 1):
+	print(abs(df["date_added"][i] - df["date_added"][i+1])) 
