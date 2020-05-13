@@ -59,7 +59,7 @@ series_to_df = date_month.to_frame()
 
 total_by_date = (series_to_df.groupby(["date_added"]).size())
 
-total_by_date.plot.hist(x = "Total", y = "Date", color = "green")
+total_by_date.plot.hist(color = "green")
 plt.show()
 
 total_by_date.plot()
