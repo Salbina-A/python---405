@@ -38,6 +38,32 @@ df1 = df.sort_values(by = ["duration", "date_added"])
 
 print(df1[~df1["cast"].isnull() & (df1["cast"].str.contains("Antonio Banderas"))])
 
+#6th task
+import pandas as pd
+import datetime 
+import matplotlib.pyplot as plt
+
+
+df = pd.read_csv("netflix_titles.csv")
+
+df["date_added"] = pd.to_datetime(df["date_added"])
+
+date_from = min(df["date_added"])
+date_to = max(df["date_added"])
+sorted_df = df[(df["date_added"] >= date_from) & (df["date_added"] <= date_to)]
+
+
+date_month = (pd.to_datetime(sorted_df['date_added']).dt.to_period('M'))
+series_to_df = date_month.to_frame() 
+
+
+total_by_date = (series_to_df.groupby(["date_added"]).size())
+
+total_by_date.plot.hist(x = "Total", y = "Date", color = "green")
+plt.show()
+
+total_by_date.plot()
+plt.show()
 
 #7th task
 import pandas as pd
