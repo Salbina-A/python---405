@@ -22,7 +22,7 @@ df = pd.read_csv("netflix_titles.csv")
 
 df_by_director = (df.groupby("director").size())
 ser_to_df = df_by_director.to_frame() 
-print(ser_to_df)
+#print(ser_to_df)
 
 final = df.merge(ser_to_df, on = "director")
 print(final)
