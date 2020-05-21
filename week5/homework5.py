@@ -21,7 +21,8 @@ print(Roman_num().int_converter_Rom(10*10-9))
 
 #2nd task
 class Person(object):
-	def __init__(self, name, last_name, age, gender, student):
+	"""docstring for Person"""
+	def __init__(self, name, last_name, age, gender, student, password):
 		super(Person, self).__init__()
 		self.name = name
 		self.last_name = last_name
@@ -39,16 +40,20 @@ class Person(object):
 		else:
 			return False
 
+	def Password(self, password):
+		self._password = password	
+		return ("Password is " +  "*" * len(password) + " and is hidden!")
+
+
 	def Goodbye(self):
 		print("Bye everyone!")
 
 	def Favourite_num(self, num1):
 		return ("My favorite number is " + str(num1))
-	
 
-p1 = Person("John", "Smith", 25, "M", "Tutor")
+p1 = Person("John", "Smith", 25, "M", "Tutor", "YouShallNotPass!")
 print(p1.Favourite_num(5))
 p1.Greeting("Jane")
 print(p1.Position(1))
-
+print(p1.Password("YouShallNotPass"))
 
