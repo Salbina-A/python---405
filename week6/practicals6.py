@@ -33,6 +33,88 @@ print(c1.circ())
 
 
 #2nd task
+class Roman_Int:
+
+    def __init__(self, num):
+        self.roman_num = num
+
+
+    def int_to_Roman(self, num):
+        val = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+            ]
+        syb = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+            ]
+        roman_num = ''
+        i = 0
+        while  num > 0:
+            for _ in range(num // val[i]):
+                roman_num += syb[i]
+                num -= val[i]
+            i += 1
+        return roman_num
+    def from_roman(self, num):
+        roman_numerals = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        result = 0
+        for i,c in enumerate(num):
+            if (i+1) == len(num) or roman_numerals[c] >= roman_numerals[num[i+1]]:
+                result += roman_numerals[c]
+            else:
+                result -= roman_numerals[c]
+        return result
+
+
+
+    def add_roman(self, x):
+        return Roman_Int(self.int_to_Roman(self.from_roman(self.roman_num) + x.from_roman(x.roman_num)))
+
+
+    def sub_roman(self, y):
+
+        if self.from_roman(self.roman_num) >= y.from_roman(y.roman_num):
+            return Roman_Int(self.int_to_Roman(self.from_roman(self.roman_num) - y.from_roman(y.roman_num)))
+        else:
+            raise Exception("Sorry, cannot share negative values")
+        
+
+    def div_roman(self, z):
+
+        if z.from_roman(z.roman_num) > 0:
+            return Roman_Int(self.int_to_Roman(self.from_roman(self.roman_num) // z.from_roman(z.roman_num)))
+        else:
+            raise Exception("Sorry, cannot share inf or negative values")
+
+
+    def mult_roman(self, k):
+        return Roman_Int(self.int_to_Roman(self.from_roman(self.roman_num) * k.from_roman(k.roman_num)))
+
+
+    def sq_roman(self, j):
+        return Roman_Int(self.int_to_Roman(self.from_roman(self.roman_num) ** j.from_roman(j.roman_num)))
+
+
+    def __str__(self):
+        return self.roman_num
+
+
+
+
+a = Roman_Int("I")
+b = Roman_Int("")
+print(a.add_roman(b))
+print(a.from_roman("X"))
+print(b.int_to_Roman(5))
+print(a.sub_roman(b))
+print(a.div_roman(b))
+print(a.mult_roman(b))
+print(a.sq_roman(b))
 
 
 #3rd task
