@@ -16,7 +16,7 @@ if os.path.isfile('houses_train.csv'):
 else:    
     raise NameError("File not found!")
 
-#check is there are any null values
+#check for any null values
 if (houses.isnull().sum()).sum() == 0:
     reg = LinearRegression()
 else:
