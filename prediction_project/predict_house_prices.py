@@ -16,7 +16,7 @@ if os.path.isfile('houses_train.csv'):
 else:    
     raise NameError("File not found!")
 
-#check for any null values
+#check is there are any null values
 if (houses.isnull().sum()).sum() == 0:
     reg = LinearRegression()
 else:
@@ -84,13 +84,13 @@ class Regression_Model():
         self.mean_errors()
         print(self.y_pred)
         
-#print mean errors
+#printing mean errors
     def mean_errors(self): 
-        #print((np.mean(self.y_pred - self.y_test)**2))
-        #print(mean_squared_error(self.y_test, self.y_pred))
-        #print(sqrt(mean_squared_error(self.y_test, self.y_pred)))
+        print((np.mean(self.y_pred - self.y_test)**2))
+        print(mean_squared_error(self.y_test, self.y_pred))
+        print(sqrt(mean_squared_error(self.y_test, self.y_pred)))
 
-#show plot
+#showing plot
     def show_plot(self):
         y_plot = plt.plot(self.x_test, self.y_pred, 'b-')
         plt.show()
