@@ -81,9 +81,9 @@ class Regression_Model():
         
 
     def mean_errors(self): 
-        print((np.mean(self.y_pred - self.y_test)**2))
-        print(mean_squared_error(self.y_test, self.y_pred))
-        print(sqrt(mean_squared_error(self.y_test, self.y_pred)))
+        #print((np.mean(self.y_pred - self.y_test)**2))
+        #print(mean_squared_error(self.y_test, self.y_pred))
+        #print(sqrt(mean_squared_error(self.y_test, self.y_pred)))
 
 
     def show_plot(self):
