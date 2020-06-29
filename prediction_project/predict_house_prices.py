@@ -6,13 +6,21 @@ from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression
 from math import sqrt
 import pymongo
+import os.path
 
 
-houses = pd.read_csv('houses_train.csv')
-houses.head()
-reg = LinearRegression()
-#print(data.describe())
-#print(houses.isnull().sum()) #check if there are any NULL values
+
+if os.path.isfile('houses_train.csv'):
+    houses = pd.read_csv('houses_train.csv')
+    houses.head()
+    
+else:    
+    raise NameError("File not found!")
+
+if (houses.isnull().sum()).sum() == 0:
+    reg = LinearRegression()
+else:
+    raise ValueError("Input contains NaN, infinity or a value too large for dtype")
 
 
 class DataConv():
@@ -62,8 +70,8 @@ class Regression_Model():
 
     def train(self):
         self.x_train , self.x_test , self.y_train , self.y_test = self.converter.split_train_test()        
-        reg.fit(self.x_train,self.y_train)          
-
+        reg.fit(self.x_train,self.y_train)        
+        
         #print(reg.score(self.x_test,self.y_test))
         #print(reg.coef_)
 
@@ -81,9 +89,6 @@ class Regression_Model():
     def show_plot(self):
         y_plot = plt.plot(self.x_test, self.y_pred, 'b-')
         plt.show()
-
-
-
 
 
 t = Regression_Model(houses)
