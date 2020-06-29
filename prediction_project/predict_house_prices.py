@@ -86,8 +86,8 @@ class Regression_Model():
         
 #printing mean errors
     def mean_errors(self): 
-        print((np.mean(self.y_pred - self.y_test)**2))
-        print(mean_squared_error(self.y_test, self.y_pred))
+        #print((np.mean(self.y_pred - self.y_test)**2))
+        #print(mean_squared_error(self.y_test, self.y_pred))
         print(sqrt(mean_squared_error(self.y_test, self.y_pred)))
 
 #showing plot
